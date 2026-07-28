@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decurian Ltd — Imaging Equipment Brokerage, De-installs & Rigging</title>
+<meta name="description" content="We buy, sell, de-install, and relocate medical imaging equipment — MRI, CT, PET, C-arm and more. Fast cash offers, certified rigging, worldwide freight.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Decurian Ltd">
+<meta property="og:description" content="Buy, sell, de-install, and relocate medical imaging equipment worldwide.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,9 86,29.5 86,70.5 50,91 14,70.5 14,29.5' fill='none' stroke='%235C6C77' stroke-width='3'/><path d='M34 34 L66 66 M66 34 L34 66' fill='none' stroke='%2334E6DE' stroke-width='9' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<style>
+/* ============ FONT ============ */
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url(assets/cabinet-grotesk.woff2) format('woff2');
+  font-weight: 700 900;
+  font-display: swap;
+}
+
+/* ============ TOKENS ============ */
+:root{
+  color-scheme: dark;
+  --ink:#080A0D;
+  --ink-2:#0B0F14;
+  --panel:#0F151B;
+  --panel-2:#141C24;
+  --line:#1E2831;
+  --line-bright:#31414D;
+  --fg:#EAF1F4;
+  --fg-soft:#C6D3DB;
+  --muted:#93A5B1;
+  --muted-dim:#5C6C77;
+  --accent:#34E6DE;
+  --accent-deep:#10B0AA;
+  --accent-ink:#04201F;
+  --glow: rgba(52,230,222,.55);
+  --glow-soft: rgba(52,230,222,.14);
+
+  --display:'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
+  --body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+
+  --maxw: 1200px;
+  --pad: clamp(20px, 5vw, 64px);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; }
+
+.mx{
+  background:var(--ink);
+  color:var(--fg);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  position:relative;
+}
+.mx img{ display:block; max-width:100%; }
+.mx a{ color:inherit; text-decoration:none; }
+.wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad); }
+
+/* selection */
+.mx ::selection{ background:var(--accent); color:#04201F; }
+
+/* focus */
+.mx a:focus-visible, .mx button:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* eyebrow / mono labels */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+}
+.eyebrow::before{
+  content:"";
+  width:26px; height:1px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.eyebrow.plain::before{ display:none; }
+
+h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0; text-wrap:balance; letter-spacing:-.01em; }
+
+/* ============ TOP BAR ============ */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(180deg, rgba(8,10,13,.92), rgba(8,10,13,.68));
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .row{
+  display:flex; align-items:center; justify-content:space-between;
+  height:66px; gap:24px;
+}
+.brand{ display:flex; align-items:center; gap:11px; }
+.brand .brandmark{ width:27px; height:27px; flex:0 0 auto; color:var(--fg); }
+.brand .mark{
+  font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:.06em;
+  color:var(--fg);
+}
+.brand .mark b{ color:var(--accent); font-weight:800; }
+.brand .sub{ font-family:var(--mono); font-size:10px; letter-spacing:.24em; color:var(--muted-dim); text-transform:uppercase; }
+.nav{ display:flex; gap:30px; }
+.nav a{ font-size:14px; color:var(--fg-soft); letter-spacing:.01em; transition:color .18s; }
+.nav a:hover{ color:var(--accent); }
+.callpill{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--mono); font-size:13px; letter-spacing:.06em; font-weight:600;
+  color:var(--ink); background:var(--accent);
+  padding:10px 16px; border-radius:999px;
+  box-shadow:0 0 0 1px var(--accent), 0 8px 30px -8px var(--glow);
+  transition:transform .18s, box-shadow .18s;
+  white-space:nowrap;
+}
+.callpill:hover{ transform:translateY(-1px); box-shadow:0 0 0 1px var(--accent), 0 12px 40px -8px var(--glow); }
+.callpill .dot{ width:7px; height:7px; border-radius:50%; background:var(--ink); position:relative; }
+.callpill .dot::after{ content:""; position:absolute; inset:-4px; border-radius:50%; border:1px solid var(--ink); opacity:.4; animation:ping 1.8s ease-out infinite; }
+@keyframes ping{ 0%{transform:scale(.6);opacity:.7} 100%{transform:scale(1.7);opacity:0} }
+
+/* ============ HERO ============ */
+.hero{ position:relative; border-bottom:1px solid var(--line); overflow:hidden; }
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr .95fr; gap:0; align-items:stretch;
+  min-height:min(84vh, 760px);
+}
+.hero-left{
+  padding:clamp(48px,7vw,96px) clamp(20px,4vw,56px) clamp(48px,6vw,80px) var(--pad);
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative; z-index:3;
+}
+.hero-left .kicker{ margin-bottom:26px; }
+.hero h1{
+  font-size:clamp(38px, 6vw, 74px);
+  letter-spacing:-.02em;
+}
+.hero h1 .cy{ color:var(--accent); }
+.hero .lede{
+  margin-top:24px; max-width:46ch;
+  font-size:clamp(16px,1.5vw,19px); color:var(--muted); line-height:1.55;
+}
+.cta-row{ display:flex; flex-wrap:wrap; gap:14px; margin-top:36px; }
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.03em;
+  padding:15px 24px; border-radius:8px; cursor:pointer; border:1px solid transparent;
+  transition:transform .16s, background .16s, border-color .16s, box-shadow .16s;
+}
+.btn-primary{ background:var(--accent); color:var(--ink); box-shadow:0 14px 40px -14px var(--glow); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 20px 50px -14px var(--glow); }
+.btn-ghost{ background:transparent; color:var(--fg); border-color:var(--line-bright); }
+.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+.btn .arr{ transition:transform .16s; }
+.btn:hover .arr{ transform:translateX(3px); }
+
+/* hero image side */
+.hero-right{ position:relative; }
+.hero-media{ position:absolute; inset:0; }
+.hero-media img{ width:100%; height:100%; object-fit:cover; object-position:center; }
+.hero-media::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, rgba(8,10,13,.35) 26%, rgba(8,10,13,0) 55%),
+    linear-gradient(0deg, rgba(8,10,13,.55), rgba(8,10,13,0) 40%);
+}
+/* bore ring signature over image */
+.bore{
+  position:absolute; z-index:2;
+  right:6%; top:50%; transform:translateY(-50%);
+  width:min(42vw, 360px); aspect-ratio:1;
+  pointer-events:none;
+}
+.bore .ring{ position:absolute; inset:0; border-radius:50%; }
+.bore .r1{ border:1px solid rgba(52,230,222,.30); box-shadow:0 0 50px 0 var(--glow-soft) inset, 0 0 60px -20px var(--glow); }
+.bore .r2{ inset:11%; border:1px solid rgba(52,230,222,.16); }
+.bore .r3{ inset:24%; border:1px solid rgba(52,230,222,.55); box-shadow:0 0 40px -4px var(--glow), 0 0 30px -6px var(--glow) inset; }
+.bore .r4{ inset:36%; background:radial-gradient(circle at 50% 45%, rgba(52,230,222,.20), transparent 62%); border-radius:50%; }
+.bore .dash{ position:absolute; inset:-4%; animation:spin 60s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* HUD stat strip */
+.hud{
+  position:relative; z-index:4;
+  border-top:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(15,21,27,.6), rgba(8,10,13,.6));
+}
+.hud-inner{ display:grid; grid-template-columns:repeat(4,1fr); }
+.hud .cell{ padding:22px var(--pad); border-left:1px solid var(--line); }
+.hud .cell:first-child{ border-left:0; }
+.hud .n{ font-family:var(--display); font-weight:800; font-size:clamp(24px,3vw,34px); color:var(--fg); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
+.hud .n .u{ color:var(--accent); }
+.hud .l{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted-dim); margin-top:6px; }
+
+/* ============ PULSE LINE ============ */
+.pulse{ position:relative; height:2px; background:var(--line); overflow:hidden; }
+.pulse .blip{
+  position:absolute; top:50%; left:0; width:120px; height:2px; transform:translateY(-50%);
+  background:linear-gradient(90deg, transparent, var(--accent) 60%, #bafffb 80%, transparent);
+  box-shadow:0 0 12px 1px var(--glow);
+  animation:sweep 3.6s linear infinite;
+}
+@keyframes sweep{ from{ left:-140px; } to{ left:100%; } }
+
+/* ============ SECTION SHELL ============ */
+.section{ padding:clamp(64px,9vw,120px) 0; position:relative; }
+.section-head{ max-width:none; margin-bottom:clamp(36px,5vw,56px); }
+.section-head h2{ font-size:clamp(30px,4.4vw,52px); margin-top:18px; }
+.section-head p{ color:var(--muted); max-width:56ch; margin:18px 0 0; font-size:17px; }
+
+/* ============ TRUST ============ */
+.trust{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--ink-2); }
+.trust .wrap{ padding-block:26px; display:flex; align-items:center; gap:clamp(18px,4vw,54px); flex-wrap:wrap; justify-content:space-between; }
+.trust .label{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted-dim); }
+.oem{ display:flex; gap:clamp(16px,3vw,40px); flex-wrap:wrap; align-items:center; }
+.oem span{ font-family:var(--display); font-weight:800; font-size:clamp(15px,1.8vw,20px); color:var(--fg-soft); opacity:.72; letter-spacing:.01em; }
+
+/* ============ LANES ============ */
+.lanes{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.lane{
+  position:relative; background:var(--panel); border:1px solid var(--line);
+  border-radius:14px; padding:30px 28px 28px; overflow:hidden;
+  transition:border-color .2s, transform .2s, background .2s;
+}
+.lane::before{
+  content:""; position:absolute; top:0; left:0; width:100%; height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent 70%); opacity:.0; transition:opacity .25s;
+}
+.lane:hover{ border-color:var(--line-bright); transform:translateY(-4px); background:var(--panel-2); }
+.lane:hover::before{ opacity:1; }
+.lane .ch{ font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; }
+.lane h3{ font-size:26px; margin:16px 0 12px; }
+.lane p{ color:var(--muted); font-size:15px; margin:0 0 20px; }
+.lane ul{ list-style:none; padding:0; margin:0 0 24px; display:flex; flex-direction:column; gap:9px; }
+.lane li{ font-size:14px; color:var(--fg-soft); display:flex; gap:10px; align-items:flex-start; }
+.lane li::before{ content:"→"; color:var(--accent); font-family:var(--mono); }
+.lane .go{ font-family:var(--mono); font-size:13px; letter-spacing:.04em; color:var(--fg); display:inline-flex; gap:8px; align-items:center; border-top:1px solid var(--line); padding-top:18px; }
+.lane .go b{ color:var(--accent); font-weight:600; }
+
+/* ============ MODALITIES ============ */
+.mods{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; grid-auto-rows:1fr; }
+.mod{
+  border:1px solid var(--line); border-radius:12px; background:var(--panel);
+  padding:22px 20px; min-height:132px; display:flex; flex-direction:column; justify-content:space-between;
+  transition:border-color .2s, background .2s;
+}
+.mod:hover{ border-color:var(--accent); background:var(--panel-2); }
+.mod .code{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--muted-dim); }
+.mod .name{ font-family:var(--display); font-weight:800; font-size:21px; }
+.mod .name span{ display:block; font-family:var(--body); font-weight:400; font-size:13px; color:var(--muted); margin-top:5px; }
+.mod.feature{
+  grid-column:span 2; grid-row:span 2; position:relative; overflow:hidden; min-height:280px;
+  border-color:var(--line-bright); padding:0;
+}
+.mod.feature img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.mod.feature .veil{ position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,10,13,.92) 8%, rgba(8,10,13,.25) 60%, rgba(8,10,13,.55)); }
+.mod.feature .in{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:26px; }
+.mod.feature .tag{ font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; }
+.mod.feature h3{ font-size:30px; margin:12px 0 8px; }
+.mod.feature p{ color:var(--fg-soft); font-size:14px; margin:0; max-width:40ch; }
+
+/* ============ DE-INSTALL BAND ============ */
+.band{ position:relative; border-block:1px solid var(--line); overflow:hidden; }
+.band-grid{ display:grid; grid-template-columns:1fr 1fr; align-items:stretch; }
+.band-media{ position:relative; min-height:420px; }
+.band-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.band-media::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(8,10,13,0) 40%, var(--ink)); }
+.band-media .stamp{ position:absolute; left:24px; top:24px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; background:rgba(8,10,13,.55); border:1px solid var(--line-bright); padding:7px 12px; border-radius:6px; }
+.band-body{ padding:clamp(48px,7vw,90px) var(--pad); display:flex; flex-direction:column; justify-content:center; background:var(--ink); }
+.band-body h2{ font-size:clamp(30px,4.4vw,50px); }
+.band-body p{ color:var(--muted); font-size:17px; max-width:48ch; margin:20px 0 28px; }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{ font-family:var(--mono); font-size:12px; letter-spacing:.05em; color:var(--fg-soft); border:1px solid var(--line-bright); border-radius:999px; padding:8px 14px; background:var(--panel); }
+.chip b{ color:var(--accent); font-weight:600; }
+
+/* ============ PROCESS ============ */
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.step{ padding:32px 26px; border-left:1px solid var(--line); position:relative; }
+.step:first-child{ border-left:0; }
+.step .no{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; color:var(--accent); }
+.step h3{ font-size:21px; margin:16px 0 10px; }
+.step p{ color:var(--muted); font-size:14px; margin:0; }
+
+/* ============ FINAL CTA ============ */
+.final{ position:relative; text-align:center; padding:clamp(80px,11vw,150px) var(--pad); overflow:hidden; border-top:1px solid var(--line); }
+.final .glowbg{ position:absolute; left:50%; top:44%; transform:translate(-50%,-50%); width:min(80vw,720px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle, var(--glow-soft), transparent 62%); pointer-events:none; }
+.final .bore{ position:absolute; left:50%; top:46%; right:auto; transform:translate(-50%,-50%); width:min(70vw,560px); opacity:.6; }
+.final-in{ position:relative; z-index:3; }
+.final .eyebrow{ margin-bottom:22px; }
+.final h2{ font-size:clamp(32px,5.5vw,64px); max-width:16ch; margin:0 auto; }
+.final p{ color:var(--muted); font-size:18px; margin:22px auto 40px; max-width:52ch; }
+.phone{
+  display:inline-flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;
+  font-family:var(--display); font-weight:800; font-size:clamp(36px,6.5vw,76px); color:var(--fg);
+  letter-spacing:-.02em; line-height:1;
+}
+.phone .tel{ color:var(--accent); text-shadow:0 0 40px var(--glow-soft); transition:text-shadow .2s; }
+.phone:hover .tel{ text-shadow:0 0 60px var(--glow); }
+.final .hours{ margin-top:26px; font-family:var(--mono); font-size:13px; letter-spacing:.08em; color:var(--muted-dim); }
+.final .hours b{ color:var(--fg-soft); font-weight:500; }
+
+/* ============ FOOTER ============ */
+.foot{ border-top:1px solid var(--line); background:var(--ink-2); }
+.foot .wrap{ padding-block:48px; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; }
+.foot .brandline{ display:flex; align-items:center; gap:11px; }
+.foot .footmark{ width:28px; height:28px; flex:0 0 auto; color:var(--fg-soft); }
+.foot .mark{ font-family:var(--display); font-weight:800; font-size:22px; letter-spacing:.05em; }
+.foot .mark b{ color:var(--accent); }
+.foot p{ color:var(--muted-dim); font-size:13px; margin:14px 0 0; max-width:34ch; line-height:1.6; }
+.foot h4{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 16px; font-weight:500; }
+.foot ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.foot li a{ color:var(--fg-soft); font-size:14px; }
+.foot li a:hover{ color:var(--accent); }
+.foot .bottom{ border-top:1px solid var(--line); }
+.foot .bottom .wrap{ padding-block:20px; display:flex; justify-content:space-between; gap:16px; grid-template-columns:none; }
+.foot .bottom span{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--muted-dim); }
+
+/* ============ AIR & MEDIVAC SCROLL REVEAL ============ */
+.ar-stage{ position:relative; height:320vh; background:#05070A; }
+.ar-sticky{ position:sticky; top:0; height:100vh; overflow:hidden; background:#05070A; }
+.ar-sticky canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.ar-poster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.ar-scrim{ position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg, rgba(5,7,10,.74) 0%, rgba(5,7,10,.12) 34%, rgba(5,7,10,.42) 100%); }
+.ar-vig{ position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 0 220px 40px rgba(5,7,10,.82); }
+.ar-readout{ position:absolute; left:var(--pad); top:26px; z-index:4; font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--fg-soft); display:flex; align-items:center; gap:12px; }
+.ar-readout .bar{ width:120px; height:2px; background:var(--line-bright); position:relative; overflow:hidden; }
+.ar-readout .bar i{ position:absolute; left:0; top:0; height:100%; width:0%; background:var(--accent); box-shadow:0 0 10px var(--glow); }
+.ar-readout .tag{ color:var(--accent); }
+.ar-cap{ position:absolute; left:0; right:0; z-index:3; padding-inline:var(--pad); opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease; pointer-events:none; }
+.ar-cap .in2{ max-width:var(--maxw); margin:0 auto; }
+.ar-cap.show{ opacity:1; transform:none; }
+.ar-cap h2{ font-size:clamp(28px,4.8vw,60px); max-width:18ch; }
+.ar-cap h2 .cy{ color:var(--accent); }
+.ar-cap p{ color:var(--fg-soft); font-size:clamp(15px,1.5vw,19px); max-width:46ch; margin:16px 0 0; }
+.ar-cap .kick{ margin-bottom:18px; }
+.ar-top{ top:13vh; } .ar-bot{ bottom:16vh; }
+.ar-cta{ display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.03em; background:var(--accent); color:var(--ink); padding:14px 22px; border-radius:8px; margin-top:26px; pointer-events:auto; box-shadow:0 14px 40px -14px var(--glow); }
+.ar-cta:hover{ transform:translateY(-1px); }
+.ar-loader{ position:absolute; inset:0; z-index:5; display:flex; align-items:center; justify-content:center; background:#05070A; transition:opacity .5s ease; font-family:var(--mono); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+.ar-loader.hide{ opacity:0; pointer-events:none; }
+.ar-loader b{ margin-left:12px; color:var(--accent); font-weight:600; }
+@media (max-width:640px){ .ar-stage{ height:280vh; } .ar-cap h2{ font-size:26px; } }
+
+/* reveal — only hides when JS is confirmed active (.js), so content is never lost */
+.mx.js .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+.mx.js .reveal.in{ opacity:1; transform:none; }
+
+/* ============ CONCEPT SWITCHER (review only) ============ */
+.switcher{ position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:90; display:flex; align-items:center; gap:12px; padding:8px 8px 8px 16px; background:rgba(8,10,13,.86); border:1px solid var(--line-bright); border-radius:999px; backdrop-filter:blur(12px); box-shadow:0 14px 44px -14px rgba(0,0,0,.8); }
+.switcher .sw-lead{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted-dim); }
+.switcher .sw-seg{ display:flex; gap:4px; }
+.sw-btn{ font-family:var(--mono); font-size:13px; font-weight:600; letter-spacing:.02em; width:34px; height:34px; border-radius:999px; cursor:pointer; color:var(--fg-soft); background:transparent; border:1px solid var(--line-bright); transition:background .15s, color .15s, border-color .15s, transform .15s; }
+.sw-btn:hover{ border-color:var(--accent); color:var(--accent); }
+.sw-btn.active{ background:var(--accent); color:var(--ink); border-color:var(--accent); }
+.switcher .sw-name{ font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--accent); min-width:92px; }
+@media (max-width:640px){
+  .switcher{ gap:8px; padding:6px 12px 6px 12px; bottom:12px; }
+  .switcher .sw-lead{ display:none; }
+  .sw-btn{ width:30px; height:30px; font-size:12px; }
+  .switcher .sw-name{ font-size:11px; min-width:0; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+}
+
+/* ============ RESPONSIVE ============ */
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:960px){
+  .nav{ display:none; }
+  .hero-grid{ grid-template-columns:1fr; min-height:0; }
+  .hero-right{ min-height:340px; order:-1; }
+  .hero-media img{ object-position:center; }
+  .hud-inner{ grid-template-columns:repeat(2,1fr); }
+  .hud .cell:nth-child(3){ border-left:0; }
+  .hud .cell:nth-child(n+3){ border-top:1px solid var(--line); }
+  .lanes{ grid-template-columns:1fr; }
+  .mods{ grid-template-columns:repeat(2,1fr); }
+  .mod.feature{ grid-column:span 2; grid-row:auto; min-height:240px; }
+  .band-grid{ grid-template-columns:1fr; }
+  .band-media{ min-height:280px; }
+  .band-media::after{ background:linear-gradient(0deg, var(--ink), rgba(8,10,13,0) 55%); }
+  .steps{ grid-template-columns:1fr 1fr; }
+  .step:nth-child(3){ border-left:0; }
+  .step:nth-child(n+3){ border-top:1px solid var(--line); }
+  .foot .wrap{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:520px){
+  .mods{ grid-template-columns:1fr; }
+  .mod.feature{ grid-column:span 1; }
+  .steps{ grid-template-columns:1fr; }
+  .step{ border-left:0; border-top:1px solid var(--line); }
+  .step:first-child{ border-top:0; }
+  .foot .wrap{ grid-template-columns:1fr 1fr; }
+  .hud .n{ font-size:26px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .mx *{ animation:none !important; transition:none !important; }
+  .reveal{ opacity:1; transform:none; }
+}
+</style>
+
+<div class="mx">
+
+  <div class="switcher" role="group" aria-label="Concept switcher">
+    <span class="sw-lead">Concept</span>
+    <div class="sw-seg">
+      <button type="button" class="sw-btn" data-v="a">A</button>
+      <button type="button" class="sw-btn" data-v="b">B</button>
+      <button type="button" class="sw-btn" data-v="c">C</button>
+      <button type="button" class="sw-btn" data-v="d">D</button>
+    </div>
+    <span class="sw-name" id="swName"></span>
+  </div>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="wrap row">
+      <a class="brand" href="#top">
+        <svg class="brandmark" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,9 86,29.5 86,70.5 50,91 14,70.5 14,29.5" fill="none" stroke="currentColor" stroke-width="4" opacity=".38"/>
+          <path d="M34 34 L66 66 M66 34 L34 66" fill="none" stroke="#34E6DE" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+        <span class="mark">DECURIAN</span>
+        <span class="sub">Ltd</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#sell">Sell</a>
+        <a href="#buy">Buy</a>
+        <a href="#deinstall">De-installs</a>
+        <a href="#fleet">Fleet &amp; Air</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="callpill" href="tel:+15139043509"><span class="dot"></span>CALL (513) 904-3509</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="kicker"><span class="eyebrow" id="vEyebrow"></span></div>
+        <h1 id="vH1"></h1>
+        <p class="lede" id="vLede"></p>
+        <div class="cta-row">
+          <a class="btn btn-primary" id="vCta1" href="#"><span id="vCta1t"></span> <span class="arr">→</span></a>
+          <a class="btn btn-ghost" id="vCta2" href="#"></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-media"><img src="assets/hero.jpg" alt="Modern MRI scanner glowing cyan inside a darkened imaging suite" /></div>
+        <div class="bore" aria-hidden="true">
+          <svg class="dash" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(52,230,222,.45)" stroke-width=".4" stroke-dasharray="1.5 4.5"/></svg>
+          <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hud">
+      <div class="wrap" style="padding-inline:0;">
+        <div class="hud-inner" id="vHud"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pulse" aria-hidden="true"><div class="blip"></div></div>
+
+  <!-- ============ TRUST ============ -->
+  <section class="trust">
+    <div class="wrap">
+      <span class="label" id="vTrust"></span>
+      <div class="oem">
+        <span>GE</span><span>Siemens</span><span>Philips</span><span>Canon</span><span>Hologic</span><span>Fujifilm</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LANES ============ -->
+  <section class="section" id="sell">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" id="vLanesEye"></span>
+        <h2 id="vLanesH2"></h2>
+        <p id="vLanesP"></p>
+      </div>
+      <div class="lanes">
+        <article class="lane reveal">
+          <div class="ch">CH.01 — Sell</div>
+          <h3>Sell your equipment</h3>
+          <p>Upgrading, closing a suite, or sitting on idle iron? Send us the make, model, and a few photos. You get a straight number.</p>
+          <ul><li>Cash offers, not consignment stalls</li><li>We handle de-install &amp; removal</li><li>HIPAA-safe data wipe included</li></ul>
+          <div class="go">Start with a call → <b>we answer</b></div>
+        </article>
+        <article class="lane reveal" id="buy">
+          <div class="ch">CH.02 — Buy</div>
+          <h3>Source refurbished</h3>
+          <p>Imaging centers and resellers: tell us the modality, field strength, and budget. We match you to inventory that's actually available.</p>
+          <ul><li>Inspected, refurbished, warrantied</li><li>OEM-agnostic — we find the fit</li><li>Delivery &amp; install coordinated</li></ul>
+          <div class="go">Tell us what you need → <b>we source it</b></div>
+        </article>
+        <article class="lane reveal" id="deinstall">
+          <div class="ch">CH.03 — De-install</div>
+          <h3>De-install &amp; rig</h3>
+          <p>The part nobody else wants: pulling a 10-ton magnet out of a room that wasn't built to let it leave. That's our specialty.</p>
+          <ul><li>Certified riggers &amp; crane crews</li><li>Magnet ramp-down &amp; cryogen handling</li><li>Site restored, freight arranged</li></ul>
+          <div class="go">Book a site assessment → <b>this week</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODALITIES ============ -->
+  <section class="section" id="inventory" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Inventory &amp; expertise</span>
+        <h2>What crosses our floor.</h2>
+      </div>
+      <div class="mods">
+        <div class="mod reveal"><div class="code">MOD·MR</div><div class="name">MRI<span>1.5T · 3T · wide-bore</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·CT</div><div class="name">CT<span>16 to 256-slice</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·PT</div><div class="name">PET / CT<span>Oncology &amp; nuclear</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·XR</div><div class="name">X-Ray &amp; C-Arm<span>Fixed &amp; mobile</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·US</div><div class="name">Ultrasound<span>Cart &amp; portable</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·MG</div><div class="name">Mammography<span>2D &amp; 3D tomo</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·CL</div><div class="name">Cath &amp; Angio<span>Labs &amp; components</span></div></div>
+        <div class="mod reveal"><div class="code">MOD·NM</div><div class="name">Nuclear &amp; Mol.<span>SPECT · gamma</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AIR & MEDIVAC SCROLL REVEAL ============ -->
+  <section class="ar-stage" id="fleet">
+    <div class="ar-sticky">
+      <div class="ar-loader" id="arLoader">Loading reel<b id="arPct">0%</b></div>
+      <img class="ar-poster" id="arPoster" src="assets/frames/f_001.jpg" alt="Medevac helicopter descending toward a rooftop helipad" />
+      <canvas id="arCv"></canvas>
+      <div class="ar-scrim"></div>
+      <div class="ar-vig"></div>
+      <div class="ar-readout"><span class="tag">AIR·REEL</span><span class="bar"><i id="arBar"></i></span><span id="arTxt">00%</span></div>
+      <div class="ar-cap ar-top" id="arCap1"><div class="in2">
+        <span class="eyebrow kick">Air &amp; Medivac · the one that turns heads</span>
+        <h2>Some assets don't roll onto a truck. <span class="cy">They fly.</span></h2>
+      </div></div>
+      <div class="ar-cap ar-top" id="arCap2"><div class="in2">
+        <span class="eyebrow kick">Touchdown</span>
+        <h2>Air ambulance and rotary assets — we source, appraise, and move them too.</h2>
+        <p>The same rigging discipline as a 10-ton magnet, applied to the flashiest thing in the fleet.</p>
+      </div></div>
+      <div class="ar-cap ar-bot" id="arCap3"><div class="in2">
+        <span class="eyebrow kick">Wheels down</span>
+        <h2>If it's medical and it's heavy, it's our problem to solve.</h2>
+        <a class="ar-cta" href="tel:+15139043509">Talk to the broker →</a>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ============ DE-INSTALL BAND ============ -->
+  <section class="band">
+    <div class="band-grid">
+      <div class="band-media">
+        <span class="stamp">On-site · rigging in progress</span>
+        <img src="assets/deinstall.jpg" alt="Large MRI scanner being rigged and de-installed with industrial straps and crates" />
+      </div>
+      <div class="band-body reveal">
+        <span class="eyebrow">The heavy part</span>
+        <h2>We don't just buy it. We get it out of the building.</h2>
+        <p>A scanner walks in the door; it doesn't walk out. Ramp-down, cryogen recovery, wall demo, crane, and freight — one crew, fully insured, one point of contact.</p>
+        <div class="chips">
+          <span class="chip"><b>10T+</b> magnets rigged</span>
+          <span class="chip"><b>Crane</b> &amp; gantry crews</span>
+          <span class="chip"><b>Cryogen</b> certified</span>
+          <span class="chip"><b>HIPAA</b> data purge</span>
+          <span class="chip"><b>Freight</b> worldwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How selling works</span>
+        <h2>Four steps. One phone call to start.</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><div class="no">STEP 01</div><h3>Call &amp; describe</h3><p>Make, model, age, a few photos. Five minutes on the phone tells us most of it.</p></div>
+        <div class="step"><div class="no">STEP 02</div><h3>Same-week appraisal</h3><p>We value it against live market demand and come back with a real, firm number.</p></div>
+        <div class="step"><div class="no">STEP 03</div><h3>We rig &amp; haul</h3><p>Our crew de-installs, wipes data, restores the site, and moves the asset out.</p></div>
+        <div class="step"><div class="no">STEP 04</div><h3>You get paid</h3><p>Clean transaction, clear paperwork, funds on removal. No consignment limbo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final">
+    <div class="glowbg" aria-hidden="true"></div>
+    <div class="bore" aria-hidden="true">
+      <svg class="dash" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(52,230,222,.35)" stroke-width=".3" stroke-dasharray="1 5"/></svg>
+      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div>
+    </div>
+    <div class="final-in">
+      <span class="eyebrow plain">Direct line — no gatekeepers</span>
+      <h2 id="vFinalH2"></h2>
+      <p id="vFinalP"></p>
+      <a class="phone" href="tel:+15139043509"><span>Call</span><span class="tel">(513)&nbsp;904-3509</span></a>
+      <div class="hours"><b>Mon–Sat, 7am–9pm ET</b> · nights &amp; weekends for active de-installs</div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="wrap">
+      <div>
+        <div class="brandline">
+          <svg class="footmark" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="50,9 86,29.5 86,70.5 50,91 14,70.5 14,29.5" fill="none" stroke="currentColor" stroke-width="4" opacity=".38"/>
+            <path d="M34 34 L66 66 M66 34 L34 66" fill="none" stroke="#34E6DE" stroke-width="9" stroke-linecap="round"/>
+          </svg>
+          <span class="mark">DECURIAN</span>
+        </div>
+        <p>Medical imaging asset brokerage, de-installation, and rigging. Buying, selling, and relocating diagnostic equipment worldwide.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#sell">Sell equipment</a></li><li><a href="#buy">Buy refurbished</a></li><li><a href="#deinstall">De-install &amp; rigging</a></li><li><a href="#fleet">Air &amp; medivac</a></li></ul>
+      </div>
+      <div>
+        <h4>Modalities</h4>
+        <ul><li><a href="#inventory">MRI &amp; CT</a></li><li><a href="#inventory">PET / Nuclear</a></li><li><a href="#inventory">X-Ray &amp; C-Arm</a></li><li><a href="#fleet">Air &amp; medivac</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+15139043509">(513) 904-3509</a></li><li><a href="#contact">Request appraisal</a></li><li><a href="#top">Coverage: nationwide + export</a></li></ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="wrap">
+        <span>© 2026 Decurian Ltd</span>
+        <span>Fully insured · rigging &amp; freight certified</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* ---- Concept switcher (review tool) ---- */
+(function(){
+  var HUD_DEFAULT =
+    `<div class="cell"><div class="n">$40<span class="u">M+</span></div><div class="l">In assets moved</div></div>`+
+    `<div class="cell"><div class="n">24<span class="u">hr</span></div><div class="l">Typical offer turnaround</div></div>`+
+    `<div class="cell"><div class="n">30<span class="u">+</span></div><div class="l">Countries served</div></div>`+
+    `<div class="cell"><div class="n">100<span class="u">%</span></div><div class="l">Insured rigging &amp; freight</div></div>`;
+  var HUD_B =
+    `<div class="cell"><div class="n">$40<span class="u">M+</span></div><div class="l">In assets moved</div></div>`+
+    `<div class="cell"><div class="n">10<span class="u">T+</span></div><div class="l">Magnets rigged safely</div></div>`+
+    `<div class="cell"><div class="n">30<span class="u">+</span></div><div class="l">Countries served</div></div>`+
+    `<div class="cell"><div class="n">100<span class="u">%</span></div><div class="l">Insured &amp; certified</div></div>`;
+  var HUD_D =
+    `<div class="cell"><div class="n">500<span class="u">+</span></div><div class="l">Machines placed</div></div>`+
+    `<div class="cell"><div class="n">60<span class="u">%</span></div><div class="l">Avg. savings vs new</div></div>`+
+    `<div class="cell"><div class="n">30<span class="u">+</span></div><div class="l">Countries shipped</div></div>`+
+    `<div class="cell"><div class="n">1<span class="u">yr</span></div><div class="l">Warranty available</div></div>`;
+
+  var V = {
+    a: {
+      name:'Seller-led',
+      eyebrow:'For imaging centers, practices & clinics',
+      h1:`Upgrading, relocating, or closing? <span class="cy">We buy the scanner — and pull it out ourselves.</span>`,
+      lede:`MRI, CT, PET, C-arm — send a few photos and get a firm cash offer. We handle the de-install, the data wipe, and the haul-out. You just cash the check.`,
+      cta1:'Get a cash offer in 24h', cta1href:'tel:+15139043509',
+      cta2:'How de-install works', cta2href:'#deinstall',
+      trust:'Every major OEM — we buy them all', hud:HUD_DEFAULT,
+      lanesEye:'What we do', lanesH2:'Sell it — we do the hard part.',
+      lanesP:`Send it our way and you're done thinking about it: we appraise, buy, de-install, wipe the data, and move it out. Need to buy instead? We source that too.`,
+      finalH2:'Got a machine to offload? Talk to the broker who actually answers.',
+      finalP:'No consignment limbo, no listing fees — the person who writes the check also runs the crew.'
+    },
+    b: {
+      name:'De-install-led',
+      eyebrow:'Imaging de-installation · rigging · haul-out',
+      h1:`That scanner <span class="cy">isn't leaving the room on its own.</span>`,
+      lede:`MRI, CT, and cath-lab de-installation, rigging, cryogen handling, and freight — done by the crew that can also buy the machine from you on the way out.`,
+      cta1:'Book a site assessment', cta1href:'tel:+15139043509',
+      cta2:'Sell it instead', cta2href:'#sell',
+      trust:'Certified rigging · every modality · worldwide freight', hud:HUD_B,
+      lanesEye:'Three ways we help', lanesH2:'The heavy, specialized part is the whole point.',
+      lanesP:`Most brokers won't touch the de-install — it's our lead service. Ramp-down, rigging, freight, and a restored site. And if you'd rather just be rid of it, we'll buy it too.`,
+      finalH2:'Need a machine out of the building? Talk to the crew that actually shows up.',
+      finalP:'One insured point of contact for ramp-down, rigging, freight, and site restoration.'
+    },
+    c: {
+      name:'Two-sided',
+      eyebrow:'Medical imaging asset brokerage · est. 2009',
+      h1:`Buy it, sell it, or <span class="cy">move it</span> — one direct line for heavy imaging.`,
+      lede:`Imaging centers offloading equipment and buyers sourcing it worldwide. We appraise fast, rig it ourselves, and haul it anywhere — MRI, CT, C-arm, even air assets.`,
+      cta1:`I'm selling`, cta1href:'tel:+15139043509',
+      cta2:`I'm buying`, cta2href:'#buy',
+      trust:'Every major OEM · every modality', hud:HUD_DEFAULT,
+      lanesEye:'Two sides, one broker', lanesH2:`Whether you're offloading it or hunting for it.`,
+      lanesP:`Most brokers pick a side. We work both — so a seller's machine finds a buyer fast, and a buyer gets a real price instead of a listing that's already gone.`,
+      finalH2:'Have a machine to move? Talk to the broker who actually answers.',
+      finalP:'No call centers, no tire-kickers, no listing fees — the person who writes the check and runs the crew.'
+    },
+    d: {
+      name:'Buyer-led',
+      eyebrow:'Refurbished imaging · shipped worldwide',
+      h1:`Hospital-grade imaging, refurbished — <span class="cy">for a fraction of new.</span>`,
+      lede:`Inspected, warrantied MRI, CT, PET, and C-arm systems, crated and shipped anywhere. Tell us the modality and budget; we match you to a machine that's actually available.`,
+      cta1:'Browse inventory', cta1href:'#inventory',
+      cta2:'Talk to a specialist', cta2href:'tel:+15139043509',
+      trust:'GE · Siemens · Philips · Canon — inspected & warrantied', hud:HUD_D,
+      lanesEye:'Sourcing made simple', lanesH2:`Tell us what you need. We'll find the fit.`,
+      lanesP:`OEM-agnostic sourcing, inspection, and delivery — plus we buy and de-install if you're on the other side of the deal.`,
+      finalH2:'Hunting for a specific machine? Tell us the spec and the budget.',
+      finalP:`We'll tell you what's available, what it really costs, and how fast it can ship.`
+    }
+  };
+
+  function txt(id,s){ var e=document.getElementById(id); if(e) e.textContent=s; }
+  function htmlEl(id,s){ var e=document.getElementById(id); if(e) e.innerHTML=s; }
+  function href(id,h){ var e=document.getElementById(id); if(e) e.setAttribute('href',h); }
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.sw-btn'));
+
+  function apply(k){
+    var v = V[k] || V.a;
+    txt('vEyebrow', v.eyebrow); htmlEl('vH1', v.h1); txt('vLede', v.lede);
+    txt('vCta1t', v.cta1); href('vCta1', v.cta1href); txt('vCta2', v.cta2); href('vCta2', v.cta2href);
+    htmlEl('vHud', v.hud); txt('vTrust', v.trust);
+    txt('vLanesEye', v.lanesEye); txt('vLanesH2', v.lanesH2); txt('vLanesP', v.lanesP);
+    txt('vFinalH2', v.finalH2); txt('vFinalP', v.finalP);
+    txt('swName', v.name);
+    btns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-v')===k); });
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ apply(b.getAttribute('data-v')); }); });
+  apply('a');
+})();
+
+(function(){
+  var mx = document.querySelector('.mx'); if(mx){ mx.classList.add('js'); }
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* ---- Air & Medivac scroll-scrub ---- */
+(function(){
+  var FRAMES = ["assets/frames/f_001.jpg","assets/frames/f_002.jpg","assets/frames/f_003.jpg","assets/frames/f_004.jpg","assets/frames/f_005.jpg","assets/frames/f_006.jpg","assets/frames/f_007.jpg","assets/frames/f_008.jpg","assets/frames/f_009.jpg","assets/frames/f_010.jpg","assets/frames/f_011.jpg","assets/frames/f_012.jpg","assets/frames/f_013.jpg","assets/frames/f_014.jpg","assets/frames/f_015.jpg","assets/frames/f_016.jpg","assets/frames/f_017.jpg","assets/frames/f_018.jpg","assets/frames/f_019.jpg","assets/frames/f_020.jpg","assets/frames/f_021.jpg","assets/frames/f_022.jpg","assets/frames/f_023.jpg","assets/frames/f_024.jpg","assets/frames/f_025.jpg","assets/frames/f_026.jpg","assets/frames/f_027.jpg","assets/frames/f_028.jpg","assets/frames/f_029.jpg","assets/frames/f_030.jpg","assets/frames/f_031.jpg","assets/frames/f_032.jpg","assets/frames/f_033.jpg","assets/frames/f_034.jpg","assets/frames/f_035.jpg","assets/frames/f_036.jpg","assets/frames/f_037.jpg","assets/frames/f_038.jpg","assets/frames/f_039.jpg","assets/frames/f_040.jpg","assets/frames/f_041.jpg","assets/frames/f_042.jpg","assets/frames/f_043.jpg","assets/frames/f_044.jpg","assets/frames/f_045.jpg","assets/frames/f_046.jpg","assets/frames/f_047.jpg","assets/frames/f_048.jpg","assets/frames/f_049.jpg","assets/frames/f_050.jpg","assets/frames/f_051.jpg","assets/frames/f_052.jpg","assets/frames/f_053.jpg","assets/frames/f_054.jpg","assets/frames/f_055.jpg"];
+  var cv = document.getElementById('arCv'); if(!cv) return;
+  var ctx = cv.getContext('2d');
+  var loader = document.getElementById('arLoader'), pct = document.getElementById('arPct');
+  var poster = document.getElementById('arPoster');
+  var bar = document.getElementById('arBar'), txt = document.getElementById('arTxt');
+  var stage = document.getElementById('fleet');
+  var c1 = document.getElementById('arCap1'), c2 = document.getElementById('arCap2'), c3 = document.getElementById('arCap3');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var imgs = [], loaded = 0, ready = false;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2), cw = 0, ch = 0, target = 0, current = 0;
+
+  function resize(){ cw = cv.clientWidth; ch = cv.clientHeight; cv.width = Math.round(cw*dpr); cv.height = Math.round(ch*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); draw(Math.round(current)); }
+  function cover(img){ if(!img || !img.width) return; var ir = img.width/img.height, cr = cw/ch, w,h,x,y; if(ir>cr){ h=ch; w=ch*ir; x=(cw-w)/2; y=0; } else { w=cw; h=cw/ir; x=0; y=(ch-h)/2; } ctx.drawImage(img,x,y,w,h); }
+  function draw(i){ i = Math.max(0, Math.min(FRAMES.length-1, i)); cover(imgs[i]); }
+  function prog(){ var r = stage.getBoundingClientRect(); var total = r.height - window.innerHeight; var p = total>0 ? (-r.top)/total : 0; return Math.max(0, Math.min(1, p)); }
+  function caps(p){ c1.classList.toggle('show', p>=0.05 && p<0.42); c2.classList.toggle('show', p>=0.46 && p<0.80); c3.classList.toggle('show', p>=0.84); }
+  function render(){
+    var p = prog();
+    target = p*(FRAMES.length-1);
+    bar.style.width = Math.round(p*100)+'%';
+    txt.textContent = (p*100<10?'0':'')+Math.round(p*100)+'%';
+    caps(p);
+    if(reduce){ current = target; } else { current += (target-current)*0.18; if(Math.abs(target-current)<0.02) current = target; }
+    draw(Math.round(current));
+    requestAnimationFrame(render);
+  }
+  function start(){ ready = true; poster.style.display='none'; loader.classList.add('hide'); resize(); requestAnimationFrame(render); }
+
+  FRAMES.forEach(function(src, idx){ var im = new Image(); im.onload = im.onerror = function(){ loaded++; pct.textContent = Math.round(loaded/FRAMES.length*100)+'%'; if(loaded===FRAMES.length && !ready) start(); }; im.src = src; imgs[idx] = im; });
+  window.addEventListener('resize', resize);
+})();
+</script>
+
+</body>
+</html>
