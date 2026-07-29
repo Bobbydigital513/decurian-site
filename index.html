@@ -162,8 +162,8 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 }
 .btn-primary{ background:var(--accent); color:var(--ink); box-shadow:0 14px 40px -14px var(--glow); }
 .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 20px 50px -14px var(--glow); }
-.btn-ghost{ background:transparent; color:var(--fg); border-color:var(--line-bright); }
-.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+.btn-ghost{ background:var(--fg); color:#000; border-color:var(--fg); font-weight:700; }
+.btn-ghost:hover{ background:#fff; border-color:#fff; color:#000; transform:translateY(-2px); }
 .btn .arr{ transition:transform .16s; }
 .btn:hover .arr{ transform:translateX(3px); }
 
