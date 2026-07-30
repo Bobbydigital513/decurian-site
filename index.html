@@ -135,7 +135,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 /* ============ HERO ============ */
 .hero{ position:relative; border-bottom:1px solid var(--line); overflow:hidden; }
 .hero-grid{
-  display:grid; grid-template-columns:1.05fr .95fr; gap:0; align-items:stretch;
+  display:grid; grid-template-columns:0.88fr 1.12fr; gap:0; align-items:stretch;
   min-height:min(84vh, 760px);
 }
 .hero-left{
@@ -162,8 +162,10 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 }
 .btn-primary{ background:var(--accent); color:var(--ink); box-shadow:0 14px 40px -14px var(--glow); }
 .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 20px 50px -14px var(--glow); }
-.btn-ghost{ background:var(--fg); color:#000; border-color:var(--fg); font-weight:700; }
-.btn-ghost:hover{ background:#fff; border-color:#fff; color:#000; transform:translateY(-2px); }
+.btn-ghost{ background:var(--fg); border-color:var(--fg); font-weight:700; }
+.btn-ghost:hover{ background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
+/* all filled/light buttons keep PERMANENT dark text — beats the global .mx a{color:inherit} */
+.mx a.btn-primary, .mx a.btn-ghost, .mx a.callpill, .mx a.ar-cta{ color:var(--ink); }
 .btn .arr{ transition:transform .16s; }
 .btn:hover .arr{ transform:translateX(3px); }
 
@@ -174,7 +176,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 .hero-media::after{
   content:""; position:absolute; inset:0;
   background:
-    linear-gradient(90deg, var(--ink) 0%, rgba(8,10,13,.35) 26%, rgba(8,10,13,0) 55%),
+    linear-gradient(90deg, var(--ink) 0%, rgba(8,10,13,.28) 13%, rgba(8,10,13,0) 40%),
     linear-gradient(0deg, rgba(8,10,13,.55), rgba(8,10,13,0) 40%);
 }
 /* bore ring signature over image */
@@ -362,7 +364,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 @media (max-width:960px){
   .nav{ display:none; }
   .hero-grid{ grid-template-columns:1fr; min-height:0; }
-  .hero-right{ min-height:340px; order:-1; }
+  .hero-right{ min-height:420px; order:-1; }
   .hero-media img{ object-position:center; }
   .hud-inner{ grid-template-columns:repeat(2,1fr); }
   .hud .cell:nth-child(3){ border-left:0; }
