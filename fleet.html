@@ -3,15 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Decurian Ltd — Imaging Equipment Brokerage, De-installs & Rigging</title>
-<meta name="description" content="Decurian Ltd — your one-stop shop to buy, sell, source, and relocate medical imaging and high-end medical systems: MRI, CT, C-arm, cath lab and more. ISO-certified, fully insured, certified funds before removal, worldwide shipping.">
+<title>Fleet &amp; Air — Medivac Helicopters — Decurian Ltd</title>
+<meta name="description" content="We source and purchase helicopters and air assets — FAA-certified with complete logbooks — and relocate them anywhere.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Decurian Ltd — One-Stop Medical Equipment Brokerage">
-<meta property="og:description" content="Buy, sell, source, de-install, and relocate medical imaging and high-end medical systems worldwide. ISO-certified, one team, start to finish.">
-<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,9 86,29.5 86,70.5 50,91 14,70.5 14,29.5' fill='none' stroke='%235C6C77' stroke-width='3'/><path d='M34 34 L66 66 M66 34 L34 66' fill='none' stroke='%2334E6DE' stroke-width='9' stroke-linecap='round'/></svg>">
-</head>
-<body>
 <style>
 /* ============ FONT ============ */
 @font-face {
@@ -395,12 +390,51 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
   .mx *{ animation:none !important; transition:none !important; }
   .reveal{ opacity:1; transform:none; }
 }
+
+/* ---- sub-page styles ---- */
+.nav a.active{ color:var(--accent); }
+.lane a.go:hover, .lane a.go:hover b{ color:var(--accent); }
+.pagehead{ padding:clamp(100px,13vw,156px) 0 clamp(46px,6vw,74px); border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
+.pagehead::after{ content:""; position:absolute; right:-8%; top:-34%; width:min(58vw,560px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,var(--glow-soft),transparent 62%); pointer-events:none; }
+.pagehead .wrap{ position:relative; z-index:2; }
+.pagehead h1{ font-family:var(--display); font-weight:800; font-size:clamp(34px,6vw,64px); letter-spacing:-.02em; line-height:1; margin:18px 0 0; text-wrap:balance; }
+.pagehead h1 .cy{ color:var(--accent); }
+.pagehead p{ color:var(--muted); font-size:clamp(16px,1.6vw,20px); max-width:62ch; margin:20px 0 0; }
+.ph-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:32px; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+@media (max-width:860px){ .two{ grid-template-columns:1fr; gap:30px; } }
+.rich{ color:var(--fg-soft); font-size:17px; max-width:64ch; line-height:1.7; }
+.rich p{ margin:0 0 16px; }
+.rich strong{ color:var(--fg); font-weight:600; }
+.factlist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px; }
+.factlist li{ display:flex; gap:12px; color:var(--fg-soft); font-size:16px; }
+.factlist li::before{ content:"→"; color:var(--accent); font-family:var(--mono); }
+.imgframe{ border:1px solid var(--line-bright); border-radius:14px; overflow:hidden; position:relative; min-height:320px; }
+.imgframe img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.imgframe .veil{ position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,10,13,.55), rgba(8,10,13,0) 55%); }
+/* contact form */
+.form{ display:grid; gap:16px; }
+.form .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .form .row2{ grid-template-columns:1fr; } }
+.field{ display:flex; flex-direction:column; gap:7px; }
+.field label{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-dim); }
+.field input, .field select, .field textarea{ font-family:var(--body); font-size:16px; color:var(--fg); background:var(--panel); border:1px solid var(--line-bright); border-radius:9px; padding:13px 14px; outline:none; transition:border-color .15s; width:100%; }
+.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent); }
+.field textarea{ min-height:132px; resize:vertical; }
+.form .submit{ justify-self:start; margin-top:4px; }
+.formnote{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); letter-spacing:.03em; margin-top:2px; }
+.infocard{ border:1px solid var(--line); background:var(--panel); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:20px; }
+.infocard h3{ font-family:var(--display); font-weight:800; font-size:22px; }
+.infoline{ display:flex; flex-direction:column; gap:3px; }
+.infoline span{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-dim); }
+.infoline a{ font-size:18px; color:var(--fg); }
+.infoline a:hover{ color:var(--accent); }
+.contact-actions{ display:flex; gap:10px; flex-wrap:wrap; }
 </style>
-
+</head>
+<body>
 <div class="mx">
-
-  <!-- ============ TOP BAR ============ -->
-  <header class="topbar">
+<header class="topbar">
     <div class="wrap row">
       <a class="brand" href="index.html">
         <svg class="brandmark" viewBox="0 0 100 100" aria-hidden="true">
@@ -414,197 +448,24 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
         <a href="sell.html">Sell</a>
         <a href="buy.html">Buy</a>
         <a href="deinstall.html">De-installs</a>
-        <a href="fleet.html">Fleet &amp; Air</a>
+        <a href="fleet.html" class="active" aria-current="page">Fleet &amp; Air</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a class="callpill" href="tel:+15132223371"><span class="dot"></span>CALL (513) 222-3371</a>
     </div>
   </header>
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <div class="kicker"><span class="eyebrow">Your one-stop shop — imaging &amp; high-end medical systems</span></div>
-        <h1>Buy it, sell it, or <span class="cy">move it</span> — one team for heavy medical equipment.</h1>
-        <p class="lede">One partner for imaging centers, hospitals, and clinics: we buy, sell, source, and relocate MRI, CT, C-arm, cath lab, and high-end medical systems. Appraised fast, rigged by our own crew, shipped anywhere.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="tel:+15132223371">Get a cash offer in 24h <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="sms:+15132223371">Text us</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-media"><img src="assets/hero.jpg" alt="Modern MRI scanner glowing cyan inside a darkened imaging suite" /></div>
-        <div class="bore" aria-hidden="true">
-          <svg class="dash" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(52,230,222,.45)" stroke-width=".4" stroke-dasharray="1.5 4.5"/></svg>
-          <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div>
-        </div>
-      </div>
-    </div>
-    <div class="hud">
-      <div class="wrap" style="padding-inline:0;">
-        <div class="hud-inner">
-          <div class="cell"><div class="n">$40<span class="u">M+</span></div><div class="l">In assets moved</div></div>
-          <div class="cell"><div class="n">24<span class="u">hr</span></div><div class="l">Typical offer turnaround</div></div>
-          <div class="cell"><div class="n">4</div><div class="l">Countries served</div></div>
-          <div class="cell"><div class="n">ISO</div><div class="l">Certified &amp; fully insured</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="pulse" aria-hidden="true"><div class="blip"></div></div>
-
-  <!-- ============ TRUST ============ -->
-  <section class="trust">
-    <div class="wrap">
-      <span class="label">ISO-certified · one-stop shop · every major OEM</span>
-      <div class="oem">
-        <span>GE</span><span>Siemens</span><span>Philips</span><span>Canon</span><span>Hologic</span><span>Fujifilm</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LANES ============ -->
-  <section class="section" id="sell">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">One-stop shop</span>
-        <h2>Buy, sell, or move it — all under one roof.</h2>
-        <p>Most brokers pick a side. We do it all: buy your equipment, source what you need, and organize the crew, removal, and shipping — one call, one team, start to finish.</p>
-      </div>
-      <div class="lanes">
-        <article class="lane reveal">
-          <div class="ch">CH.01 — Sell</div>
-          <h3>Sell your equipment</h3>
-          <p>Upgrading, closing a suite, or sitting on idle iron? Send us the make, model, and a few photos. You get a straight number.</p>
-          <ul><li>Straight cash offers, not consignment</li><li>We organize the crew, removal &amp; shipping</li><li>Certified funds 48 hrs before removal</li></ul>
-          <a class="go" href="sell.html">How selling works → <b>see more</b></a>
-        </article>
-        <article class="lane reveal" id="buy">
-          <div class="ch">CH.02 — Buy</div>
-          <h3>Source &amp; purchase</h3>
-          <p>Imaging centers, hospitals, and clinics: tell us the modality, field strength, and budget. We match you to equipment that's actually available.</p>
-          <ul><li>Every system fully inspected &amp; tested</li><li>OEM-agnostic — we find the fit</li><li>Delivery &amp; install coordinated</li></ul>
-          <a class="go" href="buy.html">Browse equipment → <b>see more</b></a>
-        </article>
-        <article class="lane reveal" id="deinstall">
-          <div class="ch">CH.03 — De-install</div>
-          <h3>De-install &amp; rig</h3>
-          <p>The part nobody else wants: pulling a 10-ton magnet out of a room that wasn't built to let it leave. That's our specialty.</p>
-          <ul><li>Certified riggers &amp; crane crews</li><li>Magnet ramp-down &amp; cryogen handling</li><li>We organize freight &amp; shipping</li></ul>
-          <a class="go" href="deinstall.html">De-install &amp; rigging → <b>see more</b></a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MODALITIES ============ -->
-  <section class="section" id="inventory" style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Inventory &amp; expertise</span>
-        <h2>What crosses our floor.</h2>
-      </div>
-      <div class="mods">
-        <div class="mod reveal"><div class="code">MOD·MR</div><div class="name">MRI<span>1.5T · 3T · wide-bore</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·CT</div><div class="name">CT<span>16 to 256-slice</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·PT</div><div class="name">PET / CT<span>Oncology &amp; nuclear</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·XR</div><div class="name">X-Ray &amp; C-Arm<span>Fixed &amp; mobile</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·US</div><div class="name">Ultrasound<span>Cart &amp; portable</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·MG</div><div class="name">Mammography<span>2D &amp; 3D tomo</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·CL</div><div class="name">Cath &amp; Angio<span>Labs &amp; components</span></div></div>
-        <div class="mod reveal"><div class="code">MOD·NM</div><div class="name">Nuclear<span>SPECT · gamma</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ AIR & MEDIVAC SCROLL REVEAL ============ -->
-  <section class="ar-stage" id="fleet">
-    <div class="ar-sticky">
-      <div class="ar-loader" id="arLoader">Loading reel<b id="arPct">0%</b></div>
-      <img class="ar-poster" id="arPoster" src="assets/frames/f_001.jpg" alt="Medevac helicopter descending toward a rooftop helipad" />
-      <canvas id="arCv"></canvas>
-      <div class="ar-scrim"></div>
-      <div class="ar-vig"></div>
-      <div class="ar-readout"><span class="tag">AIR·REEL</span><span class="bar"><i id="arBar"></i></span><span id="arTxt">00%</span></div>
-      <div class="ar-cap ar-top" id="arCap1"><div class="in2">
-        <span class="eyebrow kick">Air &amp; Medivac · the one that turns heads</span>
-        <h2>Some assets don't roll onto a truck. <span class="cy">They fly.</span></h2>
-      </div></div>
-      <div class="ar-cap ar-top" id="arCap2"><div class="in2">
-        <span class="eyebrow kick">Touchdown</span>
-        <h2>We source and purchase helicopters too — FAA-certified, full logbooks.</h2>
-        <p>Air ambulance and rotary assets — provided they meet every FAA certificate and come with complete logbooks.</p>
-      </div></div>
-      <div class="ar-cap ar-bot" id="arCap3"><div class="in2">
-        <span class="eyebrow kick">Wheels down</span>
-        <h2>If it's medical and it's heavy, it's our problem to solve.</h2>
-        <a class="ar-cta" href="tel:+15132223371">Talk to the broker →</a>
-      </div></div>
-    </div>
-  </section>
-
-  <!-- ============ DE-INSTALL BAND ============ -->
-  <section class="band">
-    <div class="band-grid">
-      <div class="band-media">
-        <span class="stamp">On-site · rigging in progress</span>
-        <img src="assets/deinstall.jpg" alt="Large MRI scanner being rigged and de-installed with industrial straps and crates" />
-      </div>
-      <div class="band-body reveal">
-        <span class="eyebrow">The heavy part</span>
-        <h2>We don't just buy it. We get it out of the building.</h2>
-        <p>A scanner walks in the door; it doesn't walk out. We organize it all — ramp-down, cryogen recovery, wall demo, crane, freight, and shipping. One crew, fully insured, one point of contact.</p>
-        <div class="chips">
-          <span class="chip"><b>10T+</b> magnets rigged</span>
-          <span class="chip"><b>Crane</b> &amp; gantry crews</span>
-          <span class="chip"><b>Cryogen</b> certified</span>
-          <span class="chip"><b>ISO</b> certified</span>
-          <span class="chip"><b>Freight</b> &amp; shipping</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROCESS ============ -->
-  <section class="section" id="contact">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">How selling works</span>
-        <h2>Four steps. One phone call to start.</h2>
-      </div>
-      <div class="steps reveal">
-        <div class="step"><div class="no">STEP 01</div><h3>Call &amp; describe</h3><p>Make, model, age, a few photos. Five minutes on the phone tells us most of it.</p></div>
-        <div class="step"><div class="no">STEP 02</div><h3>Same-week appraisal</h3><p>We value it against live market demand and come back with a real, firm number.</p></div>
-        <div class="step"><div class="no">STEP 03</div><h3>You get paid — up front</h3><p>Certified funds land 48 hours before we remove a thing. No consignment limbo.</p></div>
-        <div class="step"><div class="no">STEP 04</div><h3>We rig, haul &amp; ship</h3><p>Our crew handles the removal, crane, freight, and shipping — we organize it all.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FINAL CTA ============ -->
-  <section class="final">
-    <div class="glowbg" aria-hidden="true"></div>
-    <div class="bore" aria-hidden="true">
-      <svg class="dash" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(52,230,222,.35)" stroke-width=".3" stroke-dasharray="1 5"/></svg>
-      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="ring r4"></div>
-    </div>
-    <div class="final-in">
-      <span class="eyebrow plain">Direct line — no gatekeepers</span>
-      <h2>Have a machine to move? Talk to the broker who actually answers.</h2>
-      <p>No call centers, no tire-kickers, no listing fees — one team that buys it, pays you up front, and ships it out.</p>
-      <a class="phone" href="tel:+15132223371"><span>Call</span><span class="tel">(513)&nbsp;222-3371</span></a>
-      <div class="cta-mini">
-        <a class="btn btn-ghost" href="sms:+15132223371">Text us</a>
-        <a class="btn btn-primary" href="mailto:swilliamsdecurianltd@gmail.com">Email us</a>
-      </div>
-      <div class="hours"><b>Mon–Sat, 7am–9pm ET</b> · nights &amp; weekends for active de-installs</div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="foot">
+<section class="pagehead"><div class="wrap"><span class="eyebrow">Fleet &amp; Air · medivac</span><h1>We source and move <span class="cy">air assets, too.</span></h1><p>Air ambulance and rotary assets — sourced, purchased, and relocated with the same discipline as any medical system.</p><div class="ph-cta"><a class="btn btn-primary" href="tel:+15132223371">Call (513) 222-3371 <span class="arr">→</span></a><a class="btn btn-ghost" href="sms:+15132223371">Text us</a></div></div></section><section class="section"><div class="wrap"><div class="two">
+  <div class="reveal"><div class="section-head"><span class="eyebrow">Helicopters</span><h2 style="font-size:clamp(28px,4vw,44px)">Sourced and purchased — on our terms.</h2></div>
+  <p class="rich">We source and purchase helicopters, <strong>provided they meet every FAA certificate and come with complete logbooks.</strong> No exceptions, no surprises — the same documentation discipline we bring to every deal.</p>
+  <ul class="factlist">
+    <li>FAA-certified airframes only.</li>
+    <li>Complete, verifiable logbooks required.</li>
+    <li>Sourcing, purchase, and relocation handled end to end.</li>
+  </ul>
+  <div class="ph-cta"><a class="btn btn-primary" href="tel:+15132223371">Talk to the broker <span class="arr">→</span></a><a class="btn btn-ghost" href="sms:+15132223371">Text us</a></div></div>
+  <div class="imgframe reveal" style="min-height:420px"><img src="assets/frames/f_040.jpg" alt="Medevac helicopter"><div class="veil"></div></div>
+</div></div></section><section class="final"><div class="glowbg" aria-hidden="true"></div><div class="final-in wrap"><span class="eyebrow plain">Direct line — no gatekeepers</span><h2>Have an air asset to move — or want to buy one?</h2><p>Tell us the airframe and the paperwork; we'll tell you what it's worth and how it ships.</p><a class="phone" href="tel:+15132223371"><span>Call</span><span class="tel">(513)&nbsp;222-3371</span></a><div class="cta-mini"><a class="btn btn-ghost" href="sms:+15132223371">Text us</a><a class="btn btn-primary" href="mailto:swilliamsdecurianltd@gmail.com">Email us</a></div></div></section>
+<footer class="foot">
     <div class="wrap">
       <div>
         <div class="brandline">
@@ -636,55 +497,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
       </div>
     </div>
   </footer>
-
 </div>
-
-<script>
-(function(){
-  var mx = document.querySelector('.mx'); if(mx){ mx.classList.add('js'); }
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
-  els.forEach(function(e){ io.observe(e); });
-})();
-
-/* ---- Air & Medivac scroll-scrub ---- */
-(function(){
-  var FRAMES = ["assets/frames/f_001.jpg","assets/frames/f_002.jpg","assets/frames/f_003.jpg","assets/frames/f_004.jpg","assets/frames/f_005.jpg","assets/frames/f_006.jpg","assets/frames/f_007.jpg","assets/frames/f_008.jpg","assets/frames/f_009.jpg","assets/frames/f_010.jpg","assets/frames/f_011.jpg","assets/frames/f_012.jpg","assets/frames/f_013.jpg","assets/frames/f_014.jpg","assets/frames/f_015.jpg","assets/frames/f_016.jpg","assets/frames/f_017.jpg","assets/frames/f_018.jpg","assets/frames/f_019.jpg","assets/frames/f_020.jpg","assets/frames/f_021.jpg","assets/frames/f_022.jpg","assets/frames/f_023.jpg","assets/frames/f_024.jpg","assets/frames/f_025.jpg","assets/frames/f_026.jpg","assets/frames/f_027.jpg","assets/frames/f_028.jpg","assets/frames/f_029.jpg","assets/frames/f_030.jpg","assets/frames/f_031.jpg","assets/frames/f_032.jpg","assets/frames/f_033.jpg","assets/frames/f_034.jpg","assets/frames/f_035.jpg","assets/frames/f_036.jpg","assets/frames/f_037.jpg","assets/frames/f_038.jpg","assets/frames/f_039.jpg","assets/frames/f_040.jpg","assets/frames/f_041.jpg","assets/frames/f_042.jpg","assets/frames/f_043.jpg","assets/frames/f_044.jpg","assets/frames/f_045.jpg","assets/frames/f_046.jpg","assets/frames/f_047.jpg","assets/frames/f_048.jpg","assets/frames/f_049.jpg","assets/frames/f_050.jpg","assets/frames/f_051.jpg","assets/frames/f_052.jpg","assets/frames/f_053.jpg","assets/frames/f_054.jpg","assets/frames/f_055.jpg"];
-  var cv = document.getElementById('arCv'); if(!cv) return;
-  var ctx = cv.getContext('2d');
-  var loader = document.getElementById('arLoader'), pct = document.getElementById('arPct');
-  var poster = document.getElementById('arPoster');
-  var bar = document.getElementById('arBar'), txt = document.getElementById('arTxt');
-  var stage = document.getElementById('fleet');
-  var c1 = document.getElementById('arCap1'), c2 = document.getElementById('arCap2'), c3 = document.getElementById('arCap3');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var imgs = [], loaded = 0, ready = false;
-  var dpr = Math.min(window.devicePixelRatio || 1, 2), cw = 0, ch = 0, target = 0, current = 0;
-
-  function resize(){ cw = cv.clientWidth; ch = cv.clientHeight; cv.width = Math.round(cw*dpr); cv.height = Math.round(ch*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); draw(Math.round(current)); }
-  function cover(img){ if(!img || !img.width) return; var ir = img.width/img.height, cr = cw/ch, w,h,x,y; if(ir>cr){ h=ch; w=ch*ir; x=(cw-w)/2; y=0; } else { w=cw; h=cw/ir; x=0; y=(ch-h)/2; } ctx.drawImage(img,x,y,w,h); }
-  function draw(i){ i = Math.max(0, Math.min(FRAMES.length-1, i)); cover(imgs[i]); }
-  function prog(){ var r = stage.getBoundingClientRect(); var total = r.height - window.innerHeight; var p = total>0 ? (-r.top)/total : 0; return Math.max(0, Math.min(1, p)); }
-  function caps(p){ c1.classList.toggle('show', p>=0.05 && p<0.42); c2.classList.toggle('show', p>=0.46 && p<0.80); c3.classList.toggle('show', p>=0.84); }
-  function render(){
-    var p = prog();
-    target = p*(FRAMES.length-1);
-    bar.style.width = Math.round(p*100)+'%';
-    txt.textContent = (p*100<10?'0':'')+Math.round(p*100)+'%';
-    caps(p);
-    if(reduce){ current = target; } else { current += (target-current)*0.18; if(Math.abs(target-current)<0.02) current = target; }
-    draw(Math.round(current));
-    requestAnimationFrame(render);
-  }
-  function start(){ ready = true; poster.style.display='none'; loader.classList.add('hide'); resize(); requestAnimationFrame(render); }
-
-  FRAMES.forEach(function(src, idx){ var im = new Image(); im.onload = im.onerror = function(){ loaded++; pct.textContent = Math.round(loaded/FRAMES.length*100)+'%'; if(loaded===FRAMES.length && !ready) start(); }; im.src = src; imgs[idx] = im; });
-  window.addEventListener('resize', resize);
-})();
-</script>
-
+<script>(function(){var mx=document.querySelector('.mx');if(mx)mx.classList.add('js');var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)});})();</script>
 </body>
 </html>
