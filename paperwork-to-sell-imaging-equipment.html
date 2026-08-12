@@ -333,6 +333,19 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 .faqitem .faqa{ padding:0 22px 20px; color:var(--muted); font-size:16px; line-height:1.65; max-width:72ch; }
 .mods a.mod{ text-decoration:none; }
 .mods a.mod:hover .name{ color:var(--accent); }
+/* mobile menu toggle + sticky bottom call bar */
+.navtoggle{ display:none; }
+.mobilecta{ display:none; }
+@media (max-width:960px){
+  .callpill{ display:none; }
+  .navtoggle{ display:inline-flex; align-items:center; justify-content:center; width:46px; height:40px; border:1px solid var(--line-bright); background:transparent; color:var(--fg); border-radius:9px; font-size:20px; line-height:1; cursor:pointer; }
+  .navtoggle:hover{ border-color:var(--accent); color:var(--accent); }
+  .topbar.open .nav{ display:flex; flex-direction:column; position:absolute; left:0; right:0; top:66px; background:var(--ink-2); border-bottom:1px solid var(--line); padding:4px var(--pad) 12px; gap:0; z-index:60; box-shadow:0 24px 44px -22px rgba(0,0,0,.85); }
+  .topbar.open .nav a{ padding:15px 2px; border-top:1px solid var(--line); font-size:16px; }
+  .mobilecta{ display:flex; gap:10px; position:fixed; left:0; right:0; bottom:0; z-index:70; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:rgba(8,10,13,.94); backdrop-filter:blur(10px); border-top:1px solid var(--line); }
+  .mobilecta .btn{ flex:1; justify-content:center; padding:13px 16px; }
+  .mx{ padding-bottom:76px; }
+}
 .final .hours b{ color:var(--fg-soft); font-weight:500; }
 
 /* ============ FOOTER ============ */
@@ -494,6 +507,11 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
         <a href="contact.html">Contact</a>
       </nav>
       <a class="callpill" href="tel:+15132223371"><span class="dot"></span>CALL (513) 222-3371</a>
+      <button class="navtoggle" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="var t=this.closest('.topbar');var o=t.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button>
+    </div>
+    <div class="mobilecta" aria-label="Quick contact">
+      <a class="btn btn-primary" href="tel:+15132223371">Call now</a>
+      <a class="btn btn-ghost" href="sms:+15132223371">Text us</a>
     </div>
   </header>
 <section class="pagehead"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Blog</a> / <span>What Paperwork You Need to Sell Medical Imaging Equipment</span></div><span class="eyebrow">Guide</span><h1>What Paperwork You Need to Sell Medical Imaging Equipment</h1><p>Service records, software licenses, and clean title — the paperwork that speeds a sale and lifts your price.</p><div class="postmeta" style="margin-top:8px">2026-08-30 · Decurian Ltd</div></div></section><section class="section"><div class="wrap"><article class="article reveal"><p class="lead">You don't need a binder to get a quote, but the right documents get you a better price and a faster close. Here's what to gather.</p>
