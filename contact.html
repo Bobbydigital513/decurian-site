@@ -5,8 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Decurian Ltd — Call, Text or Email</title>
 <meta name="description" content="Contact Decurian Ltd to buy, sell, or move medical imaging equipment. Call or text (513) 222-3371 or email us.">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://decurianltd.com/contact">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Decurian Ltd">
+<meta property="og:title" content="Contact Decurian Ltd — Call, Text or Email">
+<meta property="og:description" content="Contact Decurian Ltd to buy, sell, or move medical imaging equipment. Call or text (513) 222-3371 or email us.">
+<meta property="og:url" content="https://decurianltd.com/contact">
+<meta property="og:image" content="https://decurianltd.com/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Decurian Ltd — Call, Text or Email">
+<meta name="twitter:description" content="Contact Decurian Ltd to buy, sell, or move medical imaging equipment. Call or text (513) 222-3371 or email us.">
+<meta name="twitter:image" content="https://decurianltd.com/assets/hero.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,9 86,29.5 86,70.5 50,91 14,70.5 14,29.5' fill='none' stroke='%235C6C77' stroke-width='3'/><path d='M34 34 L66 66 M66 34 L34 66' fill='none' stroke='%2334E6DE' stroke-width='9' stroke-linecap='round'/></svg>">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://decurianltd.com/#org","name":"Decurian Ltd","url":"https://decurianltd.com","telephone":"+15132223371","email":"swilliamsdecurianltd@gmail.com","image":"https://decurianltd.com/assets/hero.jpg","description":"Medical imaging equipment brokerage: we buy, sell, source, de-install, rig, and relocate MRI, CT, PET, C-arm, cath lab and high-end medical systems worldwide. ISO-certified, fully insured.","areaServed":["United States","Worldwide"],"knowsAbout":["MRI","CT scanners","PET/CT","C-arm","cath lab","medical imaging de-installation","rigging","medical equipment relocation"],"priceRange":"$$$","sameAs":[]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://decurianltd.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://decurianltd.com/contact"}]}</script>
 <style>
 /* ============ FONT ============ */
 @font-face {
@@ -308,6 +321,16 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
 .phone:hover .tel{ text-shadow:0 0 60px var(--glow); }
 .final .hours{ margin-top:22px; font-family:var(--mono); font-size:13px; letter-spacing:.08em; color:var(--muted-dim); }
 .cta-mini{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px; }
+/* FAQ (AEO answer boxes) */
+.faqlist{ display:flex; flex-direction:column; gap:12px; max-width:840px; }
+.faqitem{ border:1px solid var(--line); border-radius:12px; background:var(--panel); overflow:hidden; }
+.faqitem summary{ cursor:pointer; list-style:none; padding:20px 22px; font-family:var(--display); font-weight:800; font-size:18px; color:var(--fg); display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.faqitem summary::-webkit-details-marker{ display:none; }
+.faqitem summary::after{ content:"+"; color:var(--accent); font-family:var(--mono); font-size:22px; line-height:1; }
+.faqitem[open] summary::after{ content:"–"; }
+.faqitem .faqa{ padding:0 22px 20px; color:var(--muted); font-size:16px; line-height:1.65; max-width:72ch; }
+.mods a.mod{ text-decoration:none; }
+.mods a.mod:hover .name{ color:var(--accent); }
 .final .hours b{ color:var(--fg-soft); font-weight:500; }
 
 /* ============ FOOTER ============ */
@@ -391,45 +414,61 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
   .reveal{ opacity:1; transform:none; }
 }
 
-/* ---- sub-page styles ---- */
 .nav a.active{ color:var(--accent); }
 .lane a.go:hover, .lane a.go:hover b{ color:var(--accent); }
-.pagehead{ padding:clamp(100px,13vw,156px) 0 clamp(46px,6vw,74px); border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
+.pagehead{ padding:clamp(100px,13vw,156px) 0 clamp(44px,6vw,72px); border-bottom:1px solid var(--line); position:relative; overflow:hidden; }
 .pagehead::after{ content:""; position:absolute; right:-8%; top:-34%; width:min(58vw,560px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,var(--glow-soft),transparent 62%); pointer-events:none; }
 .pagehead .wrap{ position:relative; z-index:2; }
-.pagehead h1{ font-family:var(--display); font-weight:800; font-size:clamp(34px,6vw,64px); letter-spacing:-.02em; line-height:1; margin:18px 0 0; text-wrap:balance; }
+.pagehead .crumbs{ font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--muted-dim); margin-bottom:14px; }
+.pagehead .crumbs a{ color:var(--muted-dim); } .pagehead .crumbs a:hover{ color:var(--accent); }
+.pagehead h1{ font-family:var(--display); font-weight:800; font-size:clamp(32px,5.6vw,60px); letter-spacing:-.02em; line-height:1.02; margin:14px 0 0; text-wrap:balance; }
 .pagehead h1 .cy{ color:var(--accent); }
-.pagehead p{ color:var(--muted); font-size:clamp(16px,1.6vw,20px); max-width:62ch; margin:20px 0 0; }
+.pagehead p{ color:var(--muted); font-size:clamp(16px,1.6vw,20px); max-width:64ch; margin:20px 0 0; }
 .ph-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:32px; }
 .two{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
 @media (max-width:860px){ .two{ grid-template-columns:1fr; gap:30px; } }
 .rich{ color:var(--fg-soft); font-size:17px; max-width:64ch; line-height:1.7; }
-.rich p{ margin:0 0 16px; }
-.rich strong{ color:var(--fg); font-weight:600; }
+.rich p{ margin:0 0 16px; } .rich strong{ color:var(--fg); font-weight:600; }
 .factlist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px; }
 .factlist li{ display:flex; gap:12px; color:var(--fg-soft); font-size:16px; }
 .factlist li::before{ content:"→"; color:var(--accent); font-family:var(--mono); }
 .imgframe{ border:1px solid var(--line-bright); border-radius:14px; overflow:hidden; position:relative; min-height:320px; }
 .imgframe img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .imgframe .veil{ position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,10,13,.55), rgba(8,10,13,0) 55%); }
-/* contact form */
-.form{ display:grid; gap:16px; }
-.form .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.crosslinks{ display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+.chiplink{ font-family:var(--mono); font-size:13px; letter-spacing:.03em; color:var(--fg); border:1px solid var(--line-bright); border-radius:999px; padding:10px 16px; text-decoration:none; transition:border-color .18s,color .18s; }
+.chiplink:hover{ border-color:var(--accent); color:var(--accent); }
+/* form */
+.form{ display:grid; gap:16px; } .form .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 @media (max-width:640px){ .form .row2{ grid-template-columns:1fr; } }
 .field{ display:flex; flex-direction:column; gap:7px; }
 .field label{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-dim); }
-.field input, .field select, .field textarea{ font-family:var(--body); font-size:16px; color:var(--fg); background:var(--panel); border:1px solid var(--line-bright); border-radius:9px; padding:13px 14px; outline:none; transition:border-color .15s; width:100%; }
-.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent); }
+.field input,.field select,.field textarea{ font-family:var(--body); font-size:16px; color:var(--fg); background:var(--panel); border:1px solid var(--line-bright); border-radius:9px; padding:13px 14px; outline:none; transition:border-color .15s; width:100%; }
+.field input:focus,.field select:focus,.field textarea:focus{ border-color:var(--accent); }
 .field textarea{ min-height:132px; resize:vertical; }
-.form .submit{ justify-self:start; margin-top:4px; }
-.formnote{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); letter-spacing:.03em; margin-top:2px; }
+.form .submit{ justify-self:start; margin-top:4px; } .formnote{ font-family:var(--mono); font-size:12px; color:var(--muted-dim); margin-top:2px; }
 .infocard{ border:1px solid var(--line); background:var(--panel); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:20px; }
 .infocard h3{ font-family:var(--display); font-weight:800; font-size:22px; }
-.infoline{ display:flex; flex-direction:column; gap:3px; }
-.infoline span{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-dim); }
-.infoline a{ font-size:18px; color:var(--fg); }
-.infoline a:hover{ color:var(--accent); }
+.infoline{ display:flex; flex-direction:column; gap:3px; } .infoline span{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-dim); }
+.infoline a{ font-size:18px; color:var(--fg); } .infoline a:hover{ color:var(--accent); }
 .contact-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+/* blog + article */
+.bloggrid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+@media (max-width:760px){ .bloggrid{ grid-template-columns:1fr; } }
+.postcard{ border:1px solid var(--line); background:var(--panel); border-radius:14px; padding:26px; display:flex; flex-direction:column; gap:12px; text-decoration:none; transition:border-color .2s, transform .2s; }
+.postcard:hover{ border-color:var(--line-bright); transform:translateY(-3px); }
+.postcard h3{ font-family:var(--display); font-weight:800; font-size:21px; color:var(--fg); }
+.postcard p{ color:var(--muted); font-size:15px; } .postcard .more{ font-family:var(--mono); font-size:13px; color:var(--accent); margin-top:auto; }
+.postmeta{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-dim); }
+.article{ max-width:768px; margin:0 auto; }
+.article .lead{ font-size:20px; color:var(--fg); line-height:1.6; }
+.article h2{ font-family:var(--display); font-weight:800; font-size:clamp(23px,3.2vw,32px); margin:42px 0 14px; }
+.article h3{ font-family:var(--display); font-weight:800; font-size:21px; margin:28px 0 10px; }
+.article p{ color:var(--fg-soft); font-size:18px; line-height:1.75; margin:0 0 18px; }
+.article ul{ color:var(--fg-soft); font-size:18px; line-height:1.7; margin:0 0 18px; padding-left:22px; } .article li{ margin:0 0 8px; }
+.article a{ color:var(--accent); text-decoration:underline; }
+.article .cta-inline{ border:1px solid var(--line-bright); background:var(--panel); border-radius:14px; padding:24px 26px; margin:30px 0; }
+.article .cta-inline p{ margin:0 0 16px; color:var(--fg); }
 </style>
 </head>
 <body>
@@ -449,39 +488,13 @@ h1,h2,h3{ font-family:var(--display); font-weight:800; line-height:.98; margin:0
         <a href="buy.html">Buy</a>
         <a href="deinstall.html">De-installs</a>
         <a href="fleet.html">Fleet &amp; Air</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html" class="active" aria-current="page">Contact</a>
       </nav>
       <a class="callpill" href="tel:+15132223371"><span class="dot"></span>CALL (513) 222-3371</a>
     </div>
   </header>
-<section class="pagehead"><div class="wrap"><span class="eyebrow">Contact</span><h1>Talk to the broker <span class="cy">who actually answers.</span></h1><p>Selling, buying, or need something moved? Fill out the form, or call, text, or email us directly — you get the person who writes the check and runs the crew.</p><div class="ph-cta"><a class="btn btn-primary" href="tel:+15132223371">Call (513) 222-3371 <span class="arr">→</span></a><a class="btn btn-ghost" href="sms:+15132223371">Text us</a></div></div></section><section class="section"><div class="wrap"><div class="two">
-  <div class="reveal"><form class="form" id="cform">
-  <div class="row2">
-    <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required></div>
-    <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-    <div class="field"><label for="c-intent">I'm looking to</label><select id="c-intent" name="intent"><option>Sell equipment</option><option>Buy / source equipment</option><option>De-install &amp; rigging</option><option>Air &amp; medivac</option><option>Something else</option></select></div>
-  </div>
-  <div class="field"><label for="c-equip">Equipment (make / model)</label><input id="c-equip" name="equipment" type="text" placeholder="e.g. Siemens Magnetom Aera 1.5T"></div>
-  <div class="field"><label for="c-msg">Details</label><textarea id="c-msg" name="message" placeholder="Age, condition, location, timeline…"></textarea></div>
-  <button class="btn btn-primary submit" type="submit">Send it over <span class="arr">→</span></button>
-  <div class="formnote">Opens your email to send — or use the buttons on the right to call or text now.</div>
-</form></div>
-  <div class="infocard reveal">
-    <h3>Reach us directly</h3>
-    <div class="infoline"><span>Call</span><a href="tel:+15132223371">(513) 222-3371</a></div>
-    <div class="infoline"><span>Text</span><a href="sms:+15132223371">(513) 222-3371</a></div>
-    <div class="infoline"><span>Email</span><a href="mailto:swilliamsdecurianltd@gmail.com">swilliamsdecurianltd@gmail.com</a></div>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+15132223371">Call</a>
-      <a class="btn btn-ghost" href="sms:+15132223371">Text</a>
-      <a class="btn btn-ghost" href="mailto:swilliamsdecurianltd@gmail.com">Email</a>
-    </div>
-    <div class="infoline"><span>Hours</span><a style="cursor:default">Mon–Sat, 7am–9pm ET</a></div>
-  </div>
-</div></div></section>
+<section class="pagehead"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> / <span>Contact</span></div><span class="eyebrow">Contact</span><h1>Talk to the broker <span class="cy">who actually answers.</span></h1><p>Selling, buying, or need something moved? Fill out the form, or call, text, or email us directly — you get the person who writes the check and runs the crew.</p><div class="ph-cta"><a class="btn btn-primary" href="tel:+15132223371">Call (513) 222-3371 <span class="arr">→</span></a><a class="btn btn-ghost" href="sms:+15132223371">Text us</a></div></div></section><section class="section"><div class="wrap"><div class="two"><div class="reveal"><form class="form" id="cform"><div class="row2"><div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div></div><div class="row2"><div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="c-intent">I'm looking to</label><select id="c-intent" name="intent"><option>Sell equipment</option><option>Buy / source equipment</option><option>De-install &amp; rigging</option><option>Air &amp; medivac</option><option>Something else</option></select></div></div><div class="field"><label for="c-equip">Equipment (make / model)</label><input id="c-equip" name="equipment" type="text" placeholder="e.g. Siemens Magnetom Aera 1.5T"></div><div class="field"><label for="c-msg">Details</label><textarea id="c-msg" name="message" placeholder="Age, condition, location, timeline…"></textarea></div><button class="btn btn-primary submit" type="submit">Send it over <span class="arr">→</span></button><div class="formnote">Opens your email to send — or call/text us directly on the right.</div></form></div><div class="infocard reveal"><h3>Reach us directly</h3><div class="infoline"><span>Call</span><a href="tel:+15132223371">(513) 222-3371</a></div><div class="infoline"><span>Text</span><a href="sms:+15132223371">(513) 222-3371</a></div><div class="infoline"><span>Email</span><a href="mailto:swilliamsdecurianltd@gmail.com">swilliamsdecurianltd@gmail.com</a></div><div class="contact-actions"><a class="btn btn-primary" href="tel:+15132223371">Call</a><a class="btn btn-ghost" href="sms:+15132223371">Text</a><a class="btn btn-ghost" href="mailto:swilliamsdecurianltd@gmail.com">Email</a></div><div class="infoline"><span>Hours</span><a style="cursor:default">Mon–Sat, 7am–9pm ET</a></div></div></div></div></section>
 <footer class="foot">
     <div class="wrap">
       <div>
