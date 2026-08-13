@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://decurianltd.com/sitemap.xml
+Sitemap: https://www.decurianltd.com/sitemap.xml
